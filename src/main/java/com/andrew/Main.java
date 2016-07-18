@@ -34,7 +34,7 @@ public class Main {
         Category category = new Category();
 //        category.setName("cat");
 //        categoryService.add(category);
-//
+
         System.out.println(categoryService.getByName("cat").getName());
 
 //        System.out.println(categoryDao.list().get(0));
