@@ -37,7 +37,6 @@ public class Main {
 
         System.out.println(categoryService.getByName("cat").getName());
 
-//        System.out.println(categoryDao.list().get(0));
 
 
     }
