@@ -13,7 +13,6 @@ public class App {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(PersistenceConfig.class);
         Main main = (Main) context.getBean("test");
 
-//        Main main = new Main();
         main.perform();
 
     }
