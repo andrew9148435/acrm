@@ -22,7 +22,6 @@ public class CategoryAttribute {
         return pk;
     }
 
-//    @SuppressWarnings("unused")
     public void setPk(CategoryAttributeId pk) {
         this.pk = pk;
     }

@@ -4,8 +4,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-//@MappedSuperclass
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
 @Table(name = "tags")
 public class Tag {
@@ -13,16 +11,6 @@ public class Tag {
     private int id;
     private String name;
     public Set<ProductTag> productTags = new HashSet<>();
-
-
-/*    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "products_tags",
-            joinColumns = {@JoinColumn(name = "tag_id")},
-            inverseJoinColumns = {@JoinColumn(name = "product_id")}
-    )*/
-
-/*    @ManyToMany(mappedBy = "tags", fetch = FetchType.LAZY)
-    private List<Product> products = new ArrayList<>();*/
 
     public Tag() {
 

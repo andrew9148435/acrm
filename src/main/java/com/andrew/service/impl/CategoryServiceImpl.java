@@ -22,6 +22,6 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     public void remove(Category category) {
-        categoryDao.update(category);
+
     }
 }

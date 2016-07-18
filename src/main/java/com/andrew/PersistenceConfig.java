@@ -75,7 +75,6 @@ public class PersistenceConfig  {
 //                setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/avontest");
 //                setProperty("hibernate.connection.username", "root");
 //                setProperty("hibernate.connection.password", "1111");
-//                setProperty("hibernate.current_session_context_class", "org.springframework.orm.hibernate5.SpringSessionContext");
 //                setProperty("hibernate.current_session_context_class", "thread");
 
             }
