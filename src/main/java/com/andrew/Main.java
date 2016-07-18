@@ -2,7 +2,6 @@ package com.andrew;
 
 import com.andrew.dao.AttributeDao;
 import com.andrew.dao.CategoryDao;
-import com.andrew.domain.Category;
 import com.andrew.service.AttributeService;
 import com.andrew.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +24,9 @@ public class Main {
 
     public void perform() {
 
-//        Category category = new Category();
-//        category.setName("qqq");
-//        categoryService.add(category);
 
-        Category category = categoryDao.getByName("cat");
-        categoryService.rename(category, "catz");
+        categoryService.add("cat");
+
 
 
 

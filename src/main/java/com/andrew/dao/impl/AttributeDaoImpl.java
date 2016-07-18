@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 @Repository("attributeDao")
 @Transactional(propagation= Propagation.REQUIRED, readOnly=false, value = "transactionManager")
@@ -18,21 +20,22 @@ public class AttributeDaoImpl extends HibernateDao<Attribute, Integer> implement
 
     @Override
     public void add(Attribute attribute) {
-        super.add(attribute);
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isExist(String name) {
+        CriteriaBuilder builder = currentSession().getCriteriaBuilder();
+        CriteriaQuery<Attribute> criteria = builder.createQuery(Attribute.class);
+        Root<Attribute> root = criteria.from(Attribute.class);
+        criteria.select(root);
+        criteria.where(builder.equal( root.get("name"), name));
+        return !currentSession().createQuery(criteria).setMaxResults(1).getResultList().isEmpty();
     }
 
     @Override
     public boolean removeAttribute(Attribute attribute) {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
-    @Override
-    public Attribute find(Integer key) {
-        return null;
-    }
-
-    @Override
-    public List<Attribute> list() {
-        return null;
-    }
 }

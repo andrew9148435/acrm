@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.List;
 
 @Repository("categoryDao")
 public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements CategoryDao {
@@ -32,17 +31,12 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
 
     @Override
     public void add(Category category) {
-        if (!isExist(category.getName())) super.add(category);
+        super.add(category);
     }
 
     @Override
-    public boolean removeCategory(Category category) {
-        return false;
-    }
-
-    @Override
-    public List<Category> list() {
-        return null;
+    public void removeCategory(Category category) {
+        throw new UnsupportedOperationException();
     }
 
     public Category getByName(String name) {

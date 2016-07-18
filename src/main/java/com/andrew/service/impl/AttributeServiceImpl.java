@@ -19,7 +19,12 @@ public class AttributeServiceImpl implements AttributeService {
 
     @Override
     public void add(Attribute attribute) {
+        throw new UnsupportedOperationException();
+    }
 
+    @Override
+    public boolean isExist(String name) {
+        return attributeDao.isExist(name);
     }
 
     @Autowired

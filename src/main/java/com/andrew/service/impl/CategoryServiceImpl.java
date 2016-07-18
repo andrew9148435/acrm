@@ -13,7 +13,10 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao;
 
     @Override
-    public void add(Category category) {
+    public void add(String name) {
+        if (categoryDao.isExist(name)) return;
+        Category category = new Category();
+        category.setName(name);
         categoryDao.add(category);
     }
 
@@ -31,8 +34,13 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
-    public void remove(Category category) {
+    @Override
+    public boolean isExist(String name) {
+        return categoryDao.isExist(name);
+    }
 
+    public void remove(Category category) {
+        throw new UnsupportedOperationException();
     }
 
 }

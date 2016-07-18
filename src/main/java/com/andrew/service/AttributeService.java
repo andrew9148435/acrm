@@ -6,4 +6,5 @@ public interface AttributeService {
 
     void add(Attribute attribute);
 
+    boolean isExist(String name);
 }
