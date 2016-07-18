@@ -24,4 +24,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void remove(Category category) {
 
     }
+
+    public void rename(Category category) {
+
+    }
+
 }
