@@ -2,7 +2,6 @@ package com.andrew.service.impl;
 
 import com.andrew.dao.AttributeDao;
 import com.andrew.domain.Attribute;
-import com.andrew.domain.Category;
 import com.andrew.service.AttributeService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ public class AttributeServiceImpl implements AttributeService {
     }
 
     @Override
-    public void add(Category category, Attribute attribute) {
-        attributeDao.add(attribute);
+    public void add(Attribute attribute) {
+
     }
 
     @Autowired

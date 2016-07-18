@@ -20,7 +20,7 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
     }
 
     @Override
-    public boolean ifExist(String name) {
+    public boolean isExist(String name) {
         //change to hql
         CriteriaBuilder builder = currentSession().getCriteriaBuilder();
         CriteriaQuery<Category> criteria = builder.createQuery(Category.class);
@@ -32,7 +32,7 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
 
     @Override
     public void add(Category category) {
-        if (!ifExist(category.getName())) super.add(category);
+        if (!isExist(category.getName())) super.add(category);
     }
 
     @Override
