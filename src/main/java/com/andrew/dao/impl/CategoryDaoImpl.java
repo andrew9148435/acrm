@@ -7,6 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository("categoryDao")
@@ -14,6 +17,17 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
 
     public CategoryDaoImpl() {
 
+    }
+
+    @Override
+    public boolean ifExist(String name) {
+        //change to hql
+        CriteriaBuilder builder = currentSession().getCriteriaBuilder();
+        CriteriaQuery<Category> criteria = builder.createQuery(Category.class);
+        Root<Category> root = criteria.from(Category.class);
+        criteria.select(root);
+        criteria.where(builder.equal( root.get("name"), name));
+        return !currentSession().createQuery(criteria).setMaxResults(1).getResultList().isEmpty();
     }
 
     @Override

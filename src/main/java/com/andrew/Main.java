@@ -2,7 +2,6 @@ package com.andrew;
 
 import com.andrew.dao.AttributeDao;
 import com.andrew.dao.CategoryDao;
-import com.andrew.domain.Attribute;
 import com.andrew.domain.Category;
 import com.andrew.service.AttributeService;
 import com.andrew.service.CategoryService;
@@ -26,16 +25,11 @@ public class Main {
 
     public void perform() {
 
-
-
-        Attribute attribute = new Attribute();
-        attribute.setName("attr");
-
         Category category = new Category();
-//        category.setName("cat");
-//        categoryService.add(category);
+        category.setName("cat");
 
-        System.out.println(categoryService.getByName("cat").getName());
+        System.out.println(categoryDao.ifExist("catz"));
+
 
 
 

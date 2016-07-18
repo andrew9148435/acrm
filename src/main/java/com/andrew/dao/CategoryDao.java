@@ -6,6 +6,8 @@ public interface CategoryDao extends GenericDao<Category, Integer> {
 
     Category getByName(String name);
 
+    boolean ifExist(String name);
+
     boolean removeCategory(Category category);
 
 }
