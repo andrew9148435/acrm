@@ -21,11 +21,11 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryDao.getByName(name);
     }
 
-    public void remove(Category category) {
+    public void rename(Category category) {
 
     }
 
-    public void rename(Category category) {
+    public void remove(Category category) {
 
     }
 
