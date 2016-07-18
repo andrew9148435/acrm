@@ -2,7 +2,9 @@ package com.andrew;
 
 import com.andrew.dao.AttributeDao;
 import com.andrew.domain.Attribute;
+import com.andrew.domain.Category;
 import com.andrew.service.AttributeService;
+import com.andrew.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +17,9 @@ public class Main {
     @Autowired
     public AttributeDao attributeDao;
 
+    @Autowired
+    public CategoryService categoryService;
+
     public void perform() {
 
 
@@ -26,10 +31,11 @@ public class Main {
         Attribute attribute = new Attribute();
         attribute.setName("attr");
 
+        Category category = new Category();
+//        category.setName("cat");
+//        categoryService.add(category);
 
-        attributeDao.add(attribute);
-
-        System.out.println(attributeDao);
+        System.out.println(categoryService.getByName("cat").getName());
 
 
 //        AttributeServiceImpl attributeServiceImpl = new AttributeServiceImpl();
