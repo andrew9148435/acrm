@@ -2,13 +2,12 @@ package com.andrew.service.impl;
 
 import com.andrew.dao.AttributeDao;
 import com.andrew.domain.Attribute;
-import com.andrew.service.ProductServiceApi;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("productService")
-public class ProductServiceIApiImpl implements ProductServiceApi {
+public class ProductServiceIApiImpl {
 
     private SessionFactory sessionFactory;
     private AttributeDao attributeDao;

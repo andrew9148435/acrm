@@ -1,18 +1,16 @@
-package com.andrew.service;
+package com.andrew.service.impl;
 
 import com.andrew.dao.AttributeDao;
 import com.andrew.domain.Attribute;
+import com.andrew.service.AttributeService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//@Transactional(propagation= Propagation.REQUIRED, readOnly=false)
 @Service("attributeService")
 public class AttributeServiceImpl implements AttributeService {
 
-//    @Autowired
     private SessionFactory sessionFactory;
-//    @Autowired
     private AttributeDao attributeDao;
 
     public SessionFactory getSessionFactory() {
@@ -21,8 +19,6 @@ public class AttributeServiceImpl implements AttributeService {
 
     @Override
     public void add(Attribute attribute) {
-//        System.out.println("azzzz");
-//        System.out.println(attributeDao.toString());
         attributeDao.add(attribute);
     }
 
