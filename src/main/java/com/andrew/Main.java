@@ -27,8 +27,7 @@ public class Main {
 
         Category category = new Category();
         category.setName("cat");
-
-        System.out.println(categoryDao.ifExist("catz"));
+        categoryService.add(category);
 
 
 

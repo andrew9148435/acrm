@@ -31,6 +31,11 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
     }
 
     @Override
+    public void add(Category category) {
+        if (!ifExist(category.getName())) super.add(category);
+    }
+
+    @Override
     public boolean removeCategory(Category category) {
         return false;
     }
