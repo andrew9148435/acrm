@@ -6,7 +6,7 @@ public interface CategoryService {
 
     Category getByName(String name);
 
-    void rename(Category category);
+    void rename(Category category, String name);
 
     void add(Category category);
 

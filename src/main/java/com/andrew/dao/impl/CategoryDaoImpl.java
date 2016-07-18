@@ -36,6 +36,14 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
     }
 
     @Override
+    public void rename(Category category, String name) {
+        if (!ifExist(name)) {
+            category.setName(name);
+            update(category);
+        }
+    }
+
+    @Override
     public boolean removeCategory(Category category) {
         return false;
     }

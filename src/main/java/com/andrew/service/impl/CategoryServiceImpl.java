@@ -17,12 +17,15 @@ public class CategoryServiceImpl implements CategoryService {
         categoryDao.add(category);
     }
 
+    @Override
     public Category getByName(String name) {
         return categoryDao.getByName(name);
     }
 
-    public void rename(Category category) {
-
+    @Override
+    public void rename(Category category, String name) {
+        if (name == null || name.isEmpty() || category.getName().equals(name)) return;
+        categoryDao.rename(category, name);
     }
 
     public void remove(Category category) {

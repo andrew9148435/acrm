@@ -25,9 +25,12 @@ public class Main {
 
     public void perform() {
 
-        Category category = new Category();
-        category.setName("cat");
-        categoryService.add(category);
+//        Category category = new Category();
+//        category.setName("qqq");
+//        categoryService.add(category);
+
+        Category category = categoryDao.getByName("cat");
+        categoryService.rename(category, "cat");
 
 
 
