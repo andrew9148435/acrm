@@ -6,8 +6,6 @@ public interface AttributeService {
 
     void add(Attribute attribute);
 
-    void rename();
-
     void remove();
 
 }
