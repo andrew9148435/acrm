@@ -17,6 +17,11 @@ public class AttributeDaoImpl extends HibernateDao<Attribute, Integer> implement
     }
 
     @Override
+    public void add(Attribute attribute) {
+        super.add(attribute);
+    }
+
+    @Override
     public boolean removeAttribute(Attribute attribute) {
         return false;
     }

@@ -25,7 +25,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void rename(Category category, String name) {
         if (name == null || name.isEmpty() || category.getName().equals(name)) return;
-        categoryDao.rename(category, name);
+        if (!categoryDao.ifExist(name)) {
+            category.setName(name);
+            categoryDao.update(category);
+        }
     }
 
     public void remove(Category category) {

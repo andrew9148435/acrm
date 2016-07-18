@@ -30,7 +30,7 @@ public class Main {
 //        categoryService.add(category);
 
         Category category = categoryDao.getByName("cat");
-        categoryService.rename(category, "cat");
+        categoryService.rename(category, "catz");
 
 
 

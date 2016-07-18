@@ -8,8 +8,6 @@ public interface CategoryDao extends GenericDao<Category, Integer> {
 
     boolean ifExist(String name);
 
-    void rename(Category category, String name);
-
     boolean removeCategory(Category category);
 
 }
