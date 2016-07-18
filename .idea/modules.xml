@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/avontest.iml" filepath="$PROJECT_DIR$/avontest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acrm.iml" filepath="$PROJECT_DIR$/acrm.iml" />
     </modules>
   </component>
 </project>

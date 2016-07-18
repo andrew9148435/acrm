@@ -12,6 +12,7 @@ import javax.persistence.*;
 public class ProductAttribute {
 
     private ProductAttributeId pk = new ProductAttributeId();
+    private String value;
 
     public ProductAttribute() {
 
@@ -42,5 +43,13 @@ public class ProductAttribute {
 
     public void setAttribute(Attribute attribute) {
         getPk().setAttribute(attribute);
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }
