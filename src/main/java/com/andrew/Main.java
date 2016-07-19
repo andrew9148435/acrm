@@ -25,7 +25,8 @@ public class Main {
     public void perform() {
 
 
-        categoryService.add("cat");
+        attributeService.add("attr");
+
 
 
 

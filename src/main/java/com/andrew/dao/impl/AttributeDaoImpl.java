@@ -3,15 +3,13 @@ package com.andrew.dao.impl;
 import com.andrew.dao.AttributeDao;
 import com.andrew.domain.Attribute;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 @Repository("attributeDao")
-@Transactional(propagation= Propagation.REQUIRED, readOnly=false, value = "transactionManager")
+//@Transactional(propagation= Propagation.REQUIRED, readOnly=false, value = "transactionManager")
 public class AttributeDaoImpl extends HibernateDao<Attribute, Integer> implements AttributeDao {
 
     public AttributeDaoImpl() {
@@ -20,7 +18,7 @@ public class AttributeDaoImpl extends HibernateDao<Attribute, Integer> implement
 
     @Override
     public void add(Attribute attribute) {
-        throw new UnsupportedOperationException();
+        super.add(attribute);
     }
 
     @Override

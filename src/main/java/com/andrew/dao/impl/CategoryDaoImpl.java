@@ -17,6 +17,10 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
     public CategoryDaoImpl() {
 
     }
+    @Override
+    public void add(Category category) {
+        super.add(category);
+    }
 
     @Override
     public boolean isExist(String name) {
@@ -27,11 +31,6 @@ public class CategoryDaoImpl extends HibernateDao<Category, Integer> implements 
         criteria.select(root);
         criteria.where(builder.equal( root.get("name"), name));
         return !currentSession().createQuery(criteria).setMaxResults(1).getResultList().isEmpty();
-    }
-
-    @Override
-    public void add(Category category) {
-        super.add(category);
     }
 
     @Override
